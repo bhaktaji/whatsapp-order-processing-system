@@ -1,0 +1,125 @@
+// Multi-Tenant Prisma Schema for OrderBridge WhatsApp Order Capture Suite
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Tenant {
+  id                     String     @id @default(cuid())
+  slug                   String     @unique
+  brandName              String
+  industryPreset         String     // "fmcg_distributor" | "instagram_seller" | "horeca_wholesale" | "custom"
+  primaryColor           String     @default("#059669")
+  currencyCode           String     @default("INR")
+  currencySymbol         String     @default("₹")
+  taxRegime              String     @default("GST_INDIA") // "GST_INDIA" | "VAT" | "SALES_TAX" | "NONE"
+  defaultErp             String     @default("TALLY_PRIME") // "TALLY_PRIME" | "ZOHO_BOOKS" | "XERO" | "QUICKBOOKS" | "EXCEL_CSV"
+  autoApproveThreshold   Float      @default(0.92)
+  fuzzyMatchThreshold    Float      @default(0.72)
+  extractionSystemPrompt String
+  unitMultipliersJson    Json       // e.g. {"peti": 24, "katta": 25, "crate": 12, "dozen": 12}
+  featureFlagsJson       Json       // Toggleable features per client tier
+  channelConfigJson      Json       // Primary WABA, Standby WABA, SMS, Telegram, Magic Link settings
+  createdAt              DateTime   @default(now())
+  updatedAt              DateTime   @updatedAt
+
+  skus                   Sku[]
+  customers              Customer[]
+  orders                 DraftOrder[]
+  channelEvents          ChannelHealthEvent[]
+}
+
+model Sku {
+  id              String   @id @default(cuid())
+  tenantId        String
+  tenant          Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  code            String
+  name            String
+  category        String
+  baseUnit        String   // e.g., "Pcs", "Kg", "Box", "Peti"
+  packMultiplier  Int      @default(1)
+  basePrice       Float
+  wholesalePrice  Float
+  taxRate         Float    @default(18.0)
+  hsnCode         String?
+  stockQty        Int      @default(100)
+  aliases         String[] // Colloquial/Hinglish shorthand: ["parle chota", "parle g peti", "pg 5rs"]
+
+  @@unique([tenantId, code])
+}
+
+model Customer {
+  id                String       @id @default(cuid())
+  tenantId          String
+  tenant            Tenant       @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  name              String
+  businessName      String?
+  whatsappPhone     String
+  backupSmsPhone    String?
+  telegramHandle    String?
+  instagramHandle   String?
+  priceTier         String       @default("WHOLESALE") // "DISTRIBUTOR" | "WHOLESALE" | "RETAIL"
+  gstinOrTaxId      String?
+  shippingAddress   String?
+  creditLimit       Float        @default(50000)
+  outstandingBal    Float        @default(0)
+  lastShadowSyncAt  DateTime     @default(now())
+  orders            DraftOrder[]
+
+  @@unique([tenantId, whatsappPhone])
+}
+
+model DraftOrder {
+  id                String          @id @default(cuid())
+  orderNumber       String
+  tenantId          String
+  tenant            Tenant          @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  customerId        String
+  customer          Customer        @relation(fields: [customerId], references: [id])
+  sourceChannel     String          // "WHATSAPP_PRIMARY" | "WHATSAPP_STANDBY" | "TELEGRAM_BACKUP" | "SMS_FAILOVER" | "INSTAGRAM_DM" | "MAGIC_LINK"
+  rawMessageText    String
+  isVoiceTranscript Boolean         @default(false)
+  status            String          @default("NEEDS_REVIEW") // "NEEDS_REVIEW" | "APPROVED" | "SYNCED" | "REJECTED"
+  overallConfidence Float
+  deliveryNotes     String?
+  paymentRef        String?
+  subtotal          Float
+  taxAmount         Float
+  grandTotal        Float
+  erpSyncTarget     String?
+  erpSyncRef        String?
+  syncedAt          DateTime?
+  createdAt         DateTime        @default(now())
+  items             DraftOrderItem[]
+}
+
+model DraftOrderItem {
+  id              String     @id @default(cuid())
+  orderId         String
+  order           DraftOrder @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  rawToken        String
+  skuId           String?
+  skuCode         String
+  skuName         String
+  qty             Float
+  unit            String
+  unitPrice       Float
+  taxRate         Float
+  lineTotal       Float
+  confidence      Float
+  matchMethod     String     // "EXACT_CODE" | "ALIAS_MATCH" | "FUZZY_TOKEN" | "LLM_INFERRED" | "MANUAL"
+}
+
+model ChannelHealthEvent {
+  id              String   @id @default(cuid())
+  tenantId        String
+  tenant          Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  channel         String
+  eventType       String   // "RATE_LIMIT_WARN" | "META_BAN_131031" | "FAILOVER_ACTIVATED" | "SHADOW_BACKUP_OK"
+  details         String
+  createdAt       DateTime @default(now())
+}

@@ -1,0 +1,124 @@
+{
+  "patel_fmcg": {
+    "id": "patel_fmcg",
+    "brandName": "Patel Agro & FMCG Distributors",
+    "industry": "FMCG & Kirana Wholesale (India)",
+    "primaryColor": "#059669",
+    "currencySymbol": "₹",
+    "currencyCode": "INR",
+    "taxRegime": "GST_INDIA",
+    "defaultErp": "TALLY_PRIME",
+    "autoApproveThreshold": 0.90,
+    "fuzzyMatchThreshold": 0.70,
+    "skus": [
+      {
+        "code": "SKU-PG05",
+        "name": "Parle-G Gold Glucose Family Pack (24x250g)",
+        "baseUnit": "Peti",
+        "basePrice": 620,
+        "wholesalePrice": 560,
+        "taxRate": 18,
+        "hsnCode": "19053100",
+        "aliases": ["parle g", "parle-g", "parle peti", "pg gold", "parle biscuit"]
+      },
+      {
+        "code": "SKU-BM25",
+        "name": "Daawat Super Basmati Rice 25kg Sack",
+        "baseUnit": "Katta",
+        "basePrice": 2450,
+        "wholesalePrice": 2280,
+        "taxRate": 5,
+        "hsnCode": "10063020",
+        "aliases": ["basmati", "basmati 25kg", "chawal katta", "daawat katta", "rice bag"]
+      },
+      {
+        "code": "SKU-AT12",
+        "name": "Amul Taaza UHT Milk Tetrapack (12x1L)",
+        "baseUnit": "Box",
+        "basePrice": 840,
+        "wholesalePrice": 790,
+        "taxRate": 5,
+        "hsnCode": "04012000",
+        "aliases": ["amul taaza", "amul milk box", "taaza 1l", "doodh box"]
+      },
+      {
+        "code": "SKU-FO15",
+        "name": "Fortune Sunlite Refined Sunflower Oil 15L Tin",
+        "baseUnit": "Tin",
+        "basePrice": 2150,
+        "wholesalePrice": 1990,
+        "taxRate": 5,
+        "hsnCode": "15121910",
+        "aliases": ["fortune oil", "sunflower tin", "tel tin", "fortune 15l"]
+      }
+    ]
+  },
+  "glow_insta": {
+    "id": "glow_insta",
+    "brandName": "Kaira Botanicals & Home Studio",
+    "industry": "Instagram & WhatsApp D2C Brand",
+    "primaryColor": "#7C3AED",
+    "currencySymbol": "₹",
+    "currencyCode": "INR",
+    "taxRegime": "GST_INDIA",
+    "defaultErp": "ZOHO_BOOKS",
+    "autoApproveThreshold": 0.88,
+    "fuzzyMatchThreshold": 0.68,
+    "skus": [
+      {
+        "code": "KAI-LAV01",
+        "name": "French Lavender & Oat Milk Soy Candle (220g)",
+        "baseUnit": "Pcs",
+        "basePrice": 899,
+        "wholesalePrice": 699,
+        "taxRate": 12,
+        "hsnCode": "34060010",
+        "aliases": ["lavender candle", "lavender soy", "purple candle", "sleep candle"]
+      },
+      {
+        "code": "KAI-ROS02",
+        "name": "Kannauj Damask Rose Hydrosol Face Mist (100ml)",
+        "baseUnit": "Pcs",
+        "basePrice": 650,
+        "wholesalePrice": 490,
+        "taxRate": 18,
+        "hsnCode": "33049990",
+        "aliases": ["rose mist", "rose water", "face mist", "gulab toner"]
+      }
+    ]
+  },
+  "metro_fresh": {
+    "id": "metro_fresh",
+    "brandName": "Metro Fresh Horeca & Artisan Foods",
+    "industry": "B2B Food Brand & Restaurant Commissary",
+    "primaryColor": "#0284C7",
+    "currencySymbol": "$",
+    "currencyCode": "USD",
+    "taxRegime": "SALES_TAX",
+    "defaultErp": "XERO",
+    "autoApproveThreshold": 0.92,
+    "fuzzyMatchThreshold": 0.72,
+    "skus": [
+      {
+        "code": "MF-MOZ05",
+        "name": "Fior di Latte Artisan Mozzarella Block (5kg)",
+        "baseUnit": "Block",
+        "basePrice": 64.00,
+        "wholesalePrice": 54.00,
+        "taxRate": 8.0,
+        "hsnCode": "040610",
+        "aliases": ["mozzarella", "mozz block", "fior di latte", "pizza cheese"]
+      },
+      {
+        "code": "MF-TOM10",
+        "name": "San Marzano Style Vine Roma Tomatoes (10kg Crate)",
+        "baseUnit": "Crate",
+        "basePrice": 38.00,
+        "wholesalePrice": 32.00,
+        "taxRate": 0.0,
+        "hsnCode": "070200",
+        "aliases": ["roma tomatoes", "tomato crate", "san marzano", "vine tomatoes"]
+      }
+    ]
+  }
+}
