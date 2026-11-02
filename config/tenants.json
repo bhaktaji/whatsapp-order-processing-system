@@ -191,6 +191,7 @@
         "allowedUnits": [
           { "unit": "Bori", "multiplierNum": 1, "multiplierDen": 1, "isBase": true },
           { "unit": "Katta", "multiplierNum": 1, "multiplierDen": 1, "isBase": false },
+          { "unit": "Bag", "multiplierNum": 1, "multiplierDen": 1, "isBase": false },
           { "unit": "Pkt", "multiplierNum": 1, "multiplierDen": 1, "isBase": false },
           { "unit": "Kg", "multiplierNum": 1, "multiplierDen": 10, "isBase": false }
         ]

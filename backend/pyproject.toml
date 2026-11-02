@@ -19,7 +19,7 @@ ignore = ["S101", "B008", "E501"]
 
 [tool.ruff.lint.isort]
 known-first-party = ["app"]
-known-third-party = ["alembic", "sqlalchemy", "fastapi", "pydantic", "pytest"]
+known-third-party = ["alembic", "sqlalchemy", "fastapi", "pydantic", "pytest", "hypothesis", "rapidfuzz", "httpx"]
 
 [tool.mypy]
 python_version = "3.10"
