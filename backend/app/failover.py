@@ -5,22 +5,26 @@ enforces 24-hour service window compliance, maintains daily offline contact shad
 and automatically reroutes order capture to Standby WhatsApp, Twilio SMS, Telegram Bot,
 and Zero-Signup Magic Order Links.
 """
+
 from datetime import datetime, timezone
-from typing import Dict, Any, List
+from typing import Any
 
 
 class BanResilienceController:
-    def __init__(self, tenant_config: Dict[str, Any]):
+    def __init__(self, tenant_config: dict[str, Any]):
         self.tenant = tenant_config
-        self.channels = tenant_config.get("channels", {
-            "primary_waba": {"phone": "+91 98201 44100", "status": "HEALTHY", "quality": "GREEN"},
-            "standby_waba": {"phone": "+91 98209 88210", "status": "STANDBY", "quality": "GREEN"},
-            "sms_failover": {"phone": "+91 90001 12233", "status": "ACTIVE"},
-            "telegram_bot": {"handle": "@PatelOrderBot", "status": "ACTIVE"},
-            "magic_link": {"url": "https://ordr.link/patel-fmcg", "status": "ACTIVE"},
-        })
+        self.channels = tenant_config.get(
+            "channels",
+            {
+                "primary_waba": {"phone": "+91 98201 44100", "status": "HEALTHY", "quality": "GREEN"},
+                "standby_waba": {"phone": "+91 98209 88210", "status": "STANDBY", "quality": "GREEN"},
+                "sms_failover": {"phone": "+91 90001 12233", "status": "ACTIVE"},
+                "telegram_bot": {"handle": "@PatelOrderBot", "status": "ACTIVE"},
+                "magic_link": {"url": "https://ordr.link/patel-fmcg", "status": "ACTIVE"},
+            },
+        )
 
-    def inspect_meta_webhook_error(self, error_code: int, error_subcode: int = 0) -> Dict[str, Any]:
+    def inspect_meta_webhook_error(self, error_code: int, error_subcode: int = 0) -> dict[str, Any]:
         """
         Detects Meta account restriction / ban codes and triggers instant failover.
         131031: Account locked / policy violation
@@ -34,7 +38,7 @@ class BanResilienceController:
             )
         return {"failover_triggered": False, "status": "MONITORING", "error_code": error_code}
 
-    def trigger_emergency_failover(self, reason: str) -> Dict[str, Any]:
+    def trigger_emergency_failover(self, reason: str) -> dict[str, Any]:
         self.channels["primary_waba"]["status"] = "BANNED_OR_LOCKED"
         self.channels["primary_waba"]["quality"] = "RED"
         self.channels["standby_waba"]["status"] = "PROMOTED_PRIMARY"
@@ -65,7 +69,7 @@ class BanResilienceController:
             ],
         }
 
-    def generate_shadow_backup_csv(self, customers: List[Dict[str, Any]]) -> str:
+    def generate_shadow_backup_csv(self, customers: list[dict[str, Any]]) -> str:
         headers = ["CustomerID,Name,WhatsAppPhone,BackupSMS,Telegram,PriceTier,GSTIN,LastOrderTotal"]
         rows = [
             f"{c.get('id','')},{c.get('name','')},{c.get('phone','')},{c.get('backupPhone','')},"

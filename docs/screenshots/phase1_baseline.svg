@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <rect width="1200" height="675" fill="#f8fafc"/>
+  <!-- Top Bar -->
+  <rect width="1200" height="64" fill="#ffffff"/>
+  <line x1="0" y1="64" x2="1200" y2="64" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="32" y="38" font-family="Plus Jakarta Sans, sans-serif" font-size="18" font-weight="700" fill="#0f172a">OrderBridge</text>
+  <text x="410" y="38" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="600" fill="#0f172a">Extractor Failures (15)</text>
+  <line x1="410" y1="48" x2="555" y2="48" stroke="#059669" stroke-width="2"/>
+  <text x="585" y="38" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="500" fill="#475569">Risk Register</text>
+  <text x="695" y="38" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="500" fill="#475569">Schema &amp; Architecture</text>
+  <rect x="1010" y="18" width="158" height="30" rx="6" fill="#0f172a"/>
+  <text x="1032" y="37" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="600" fill="#ffffff">Phase 1 Baseline Ready</text>
+
+  <!-- Summary Banner -->
+  <rect x="32" y="88" width="1136" height="145" rx="12" fill="#ffffff" stroke="#e2e8f0"/>
+  <text x="56" y="116" font-family="JetBrains Mono, monospace" font-size="11" fill="#64748b">Phase 1 Baseline Verified · Branch: release/prod-ready · SQLAlchemy 2.0 + Alembic + Integer Paise</text>
+  <text x="56" y="142" font-family="Plus Jakarta Sans, sans-serif" font-size="20" font-weight="700" fill="#0f172a">OrderBridge Multi-Tenant Baseline &amp; Regression Suite</text>
+
+  <text x="56" y="178" font-family="Plus Jakarta Sans, sans-serif" font-size="11" fill="#64748b">Database Schema</text>
+  <text x="56" y="200" font-family="JetBrains Mono, monospace" font-size="18" font-weight="700" fill="#059669">11 Tables Migrated</text>
+  <text x="56" y="218" font-family="Plus Jakarta Sans, sans-serif" font-size="11" fill="#475569">PostgreSQL 16 + Alembic 0001</text>
+
+  <text x="340" y="178" font-family="Plus Jakarta Sans, sans-serif" font-size="11" fill="#64748b">Financial Precision</text>
+  <text x="340" y="200" font-family="JetBrains Mono, monospace" font-size="18" font-weight="700" fill="#0f172a">Integer Paise + BPS</text>
+  <text x="340" y="218" font-family="Plus Jakarta Sans, sans-serif" font-size="11" fill="#475569">Zero floating-point money math</text>
+
+  <text x="624" y="178" font-family="Plus Jakarta Sans, sans-serif" font-size="11" fill="#64748b">Per-SKU Unit Multipliers</text>
+  <text x="624" y="200" font-family="JetBrains Mono, monospace" font-size="18" font-weight="700" fill="#0f172a">47 Seeded Units</text>
+  <text x="624" y="218" font-family="Plus Jakarta Sans, sans-serif" font-size="11" fill="#475569">Tenant-scoped rational factors</text>
+
+  <text x="908" y="178" font-family="Plus Jakarta Sans, sans-serif" font-size="11" fill="#64748b">CI &amp; Verification</text>
+  <text x="908" y="200" font-family="JetBrains Mono, monospace" font-size="18" font-weight="700" fill="#059669">Pytest + Ruff + Mypy</text>
+  <text x="908" y="218" font-family="Plus Jakarta Sans, sans-serif" font-size="11" fill="#475569">7/7 Phase 1 tests passing</text>
+
+  <!-- Table Card -->
+  <rect x="32" y="254" width="1136" height="388" rx="12" fill="#ffffff" stroke="#e2e8f0"/>
+  <text x="56" y="286" font-family="Plus Jakarta Sans, sans-serif" font-size="15" font-weight="700" fill="#0f172a">Phase 1 Automated Verification &amp; Executed Failure Reproductions</text>
+  <line x1="32" y1="304" x2="1168" y2="304" stroke="#e2e8f0"/>
+
+  <rect x="33" y="305" width="1134" height="34" fill="#f8fafc"/>
+  <text x="56" y="326" font-family="JetBrains Mono, monospace" font-size="11" font-weight="600" fill="#475569">TEST / CHECK</text>
+  <text x="420" y="326" font-family="JetBrains Mono, monospace" font-size="11" font-weight="600" fill="#475569">EVIDENCE / ASSERTION</text>
+  <text x="1020" y="326" font-family="JetBrains Mono, monospace" font-size="11" font-weight="600" fill="#475569">STATUS</text>
+
+  <line x1="32" y1="340" x2="1168" y2="340" stroke="#e2e8f0"/>
+  <text x="56" y="368" font-family="JetBrains Mono, monospace" font-size="12" fill="#0f172a">test_health_and_readiness_endpoints</text>
+  <text x="420" y="368" font-family="JetBrains Mono, monospace" font-size="12" fill="#475569">GET /health (200) &amp; GET /ready (seeded_tenants=3)</text>
+  <text x="1020" y="368" font-family="JetBrains Mono, monospace" font-size="12" font-weight="700" fill="#059669">PASSED</text>
+
+  <line x1="32" y1="386" x2="1168" y2="386" stroke="#f1f5f9"/>
+  <text x="56" y="414" font-family="JetBrains Mono, monospace" font-size="12" fill="#0f172a">test_idempotent_demo_tenant_seed</text>
+  <text x="420" y="414" font-family="JetBrains Mono, monospace" font-size="12" fill="#475569">python -m app.seed x2 -&gt; 0 duplicate SKUs/tenants</text>
+  <text x="1020" y="414" font-family="JetBrains Mono, monospace" font-size="12" font-weight="700" fill="#059669">PASSED</text>
+
+  <line x1="32" y1="432" x2="1168" y2="432" stroke="#f1f5f9"/>
+  <text x="56" y="460" font-family="JetBrains Mono, monospace" font-size="12" fill="#0f172a">test_integer_paise_financial_calculations</text>
+  <text x="420" y="460" font-family="JetBrains Mono, monospace" font-size="12" fill="#475569">Float rejected; CGST 14250p + SGST 14250p == IGST 28500p</text>
+  <text x="1020" y="460" font-family="JetBrains Mono, monospace" font-size="12" font-weight="700" fill="#059669">PASSED</text>
+
+  <line x1="32" y1="478" x2="1168" y2="478" stroke="#f1f5f9"/>
+  <text x="56" y="506" font-family="JetBrains Mono, monospace" font-size="12" fill="#0f172a">test_per_sku_per_tenant_unit_conversions</text>
+  <text x="420" y="506" font-family="JetBrains Mono, monospace" font-size="12" fill="#475569">SKU-BM25 Kg=(1/25) vs SKU-CH50 Kg=(1/50)</text>
+  <text x="1020" y="506" font-family="JetBrains Mono, monospace" font-size="12" font-weight="700" fill="#059669">PASSED</text>
+
+  <line x1="32" y1="524" x2="1168" y2="524" stroke="#f1f5f9"/>
+  <text x="56" y="552" font-family="JetBrains Mono, monospace" font-size="12" fill="#0f172a">test_wamid_idempotency_constraint</text>
+  <text x="420" y="552" font-family="JetBrains Mono, monospace" font-size="12" fill="#475569">Duplicate (tenant_id, wamid) raises IntegrityError</text>
+  <text x="1020" y="552" font-family="JetBrains Mono, monospace" font-size="12" font-weight="700" fill="#059669">PASSED</text>
+
+  <line x1="32" y1="570" x2="1168" y2="570" stroke="#f1f5f9"/>
+  <text x="56" y="598" font-family="JetBrains Mono, monospace" font-size="12" fill="#0f172a">test_fail_fast_secret_validation_in_production</text>
+  <text x="420" y="598" font-family="JetBrains Mono, monospace" font-size="12" fill="#475569">Rejects placeholder tokens &amp; non-PostgreSQL DSN in prod</text>
+  <text x="1020" y="598" font-family="JetBrains Mono, monospace" font-size="12" font-weight="700" fill="#059669">PASSED</text>
+</svg>

@@ -6,13 +6,14 @@ Converts verified WhatsApp draft orders into:
 3. Zoho Books Sales Orders JSON
 4. Formatted CSV / Excel nightly batch import
 """
-from typing import Dict, Any, List
+
+from typing import Any
 from xml.sax.saxutils import escape
 
 
 class AccountingSyncAdapter:
     @staticmethod
-    def to_tally_prime_xml(order: Dict[str, Any], tenant: Dict[str, Any]) -> str:
+    def to_tally_prime_xml(order: dict[str, Any], tenant: dict[str, Any]) -> str:
         voucher_date = order.get("date", "20261018").replace("-", "")
         customer_name = escape(order.get("customer_name", "Cash Buyer"))
         order_no = escape(order.get("order_number", "ORD-1001"))
@@ -63,7 +64,7 @@ class AccountingSyncAdapter:
 </ENVELOPE>"""
 
     @staticmethod
-    def to_xero_invoice_json(order: Dict[str, Any]) -> Dict[str, Any]:
+    def to_xero_invoice_json(order: dict[str, Any]) -> dict[str, Any]:
         return {
             "Type": "ACCREC",
             "Contact": {"Name": order.get("customer_name", "WhatsApp Customer")},
@@ -87,7 +88,7 @@ class AccountingSyncAdapter:
         }
 
     @staticmethod
-    def to_zoho_books_json(order: Dict[str, Any]) -> Dict[str, Any]:
+    def to_zoho_books_json(order: dict[str, Any]) -> dict[str, Any]:
         return {
             "customer_name": order.get("customer_name"),
             "salesorder_number": order.get("order_number"),
@@ -111,8 +112,10 @@ class AccountingSyncAdapter:
         }
 
     @staticmethod
-    def to_csv_batch(orders: List[Dict[str, Any]]) -> str:
-        rows = ["OrderNumber,Channel,CustomerName,Phone,SKUCode,ItemName,Qty,Unit,UnitPrice,TaxPercent,LineTotal,GrandTotal,Status"]
+    def to_csv_batch(orders: list[dict[str, Any]]) -> str:
+        rows = [
+            "OrderNumber,Channel,CustomerName,Phone,SKUCode,ItemName,Qty,Unit,UnitPrice,TaxPercent,LineTotal,GrandTotal,Status"
+        ]
         for o in orders:
             for item in o.get("items", []):
                 rows.append(

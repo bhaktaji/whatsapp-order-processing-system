@@ -1,0 +1,6 @@
+{
+  "name": "OrderBridge — WhatsApp B2B Order Capture & ERP Sync",
+  "description": "Multi-tenant B2B order capture platform that converts unstructured Indian WhatsApp messages (Hinglish, Devanagari, regional scripts, shorthand, voice notes) into verified GST orders synced with Tally Prime, Zoho Books, and Excel/CSV.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

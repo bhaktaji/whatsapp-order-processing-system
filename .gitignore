@@ -1,0 +1,44 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments & caches
+.venv/
+venv/
+ENV/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.hypothesis/
+*.egg-info/
+.coverage
+htmlcov/
+
+# Local SQLite test databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Node / Vite frontend build artefacts
+node_modules/
+dist/
+dist-ssr/
+*.local
+.npm
+
+# Environment & secret files (NEVER commit secrets or PATs)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.gh_pat
+*secret*
+!docs/SECURITY_PRIVACY.md
+
+# Editor & OS files
+.DS_Store
+.idea/
+.vscode/
+Thumbs.db
