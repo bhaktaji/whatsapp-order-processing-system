@@ -81,6 +81,6 @@ jobs:
 
       - name: Install frontend dependencies & verify Vite TypeScript build
         run: |
-          npm install
+          npm install --legacy-peer-deps
           npm run lint
           npm run build
