@@ -349,61 +349,60 @@ def detect_script_and_language(text: str) -> StageOutcome[LanguageInfo]:
 
 RATE_ENQUIRY_PATTERNS = [
     re.compile(
-        r"\b(?:kya\s+rate|rate\s+kya|kitne\s+ka|kitna\s+rate|bhav\s+kya|kya\s+bhav|"
-        r"price\s+kya|what\s+is\s+the\s+(?:rate|price)|rate\s+batao|rate\s+bhejo|"
-        r"क्या\s+रेट|रेट\s+क्या|भाव\s+क्या|कितने\s+का|ભાવ\s+શું|दाम\s+किया)\b",
+        r"(?:kya\s+rate|rate\s+kya|kitne\s+ka|kitna\s+rate|bhav\s+kya|kya\s+bhav|"
+        r"price\s+kya|what\s+is\s+the\s+(?:rate|price)|rate\s+batao|rate\s+bhej(?:o|na)?|"
+        r"क्या\s+रेट|रेट\s+क्या|भाव\s+क्या|कितने\s+का|ભાવ\s+શું|दाम\s+किया)",
         re.IGNORECASE,
     ),
 ]
 
 AVAILABILITY_PATTERNS = [
     re.compile(
-        r"\b(?:stock\s+me\s+hai|available\s+hai|milega\s+kya|maal\s+hai\s+kya|"
-        r"in\s+stock|स्टॉक\s+में\s+है|मिलेगा\s+क्या)\b",
+        r"(?:stock\s+me\s+hai|available\s+hai|milega\s+kya|maal\s+hai\s+kya|"
+        r"in\s+stock|स्टॉक\s+में\s+है|मिलेगा\s+क्या)",
         re.IGNORECASE,
     ),
 ]
 
 MODIFICATION_CANCEL_PATTERNS = [
     re.compile(
-        r"\b(?:cancel\s+kar|order\s+cancel|cancel\s+my\s+order|mat\s+bhej(?:o|na)?|"
+        r"(?:cancel\s+kar|order\s+cancel|cancel\s+my\s+order|mat\s+bhej(?:o|na)?|"
         r"rehne\s+do|nahi\s+chahiye|ruk\s+jao|hold\s+kar|"
-        r"nahi\s+\d+\s+hi\s+bhej|kam\s+kar\s+do|badha\s+do|"
-        r"कैंसिल|रद्द|मत\s+भेजो|मत\s+भेजना|रहने\s+दो)\b",
+        r"nahi\s+\d+(?:\s+\w+)?\s+hi\s+bhej(?:o|na)?|kam\s+kar\s+do|badha\s+do|"
+        r"कैंसिल|रद्द|मत\s+भेजो|मत\s+भेजना|रहने\s+दो)",
         re.IGNORECASE,
     ),
 ]
 
 REPEAT_ORDER_PATTERNS = [
     re.compile(
-        r"\b(?:pichli\s+baar\s+jaisa|pichla\s+order|wahi\s+jo\s+kal|same\s+order\s+(?:repeat|bhej)|"
-        r"repeat\s+(?:last\s+)?order|last\s+time\s+wala|wahi\s+maal\s+bhej|"
-        r"पिछली\s+बार\s+जैसा|वही\s+ऑर्डर)\b",
+        r"(?:pichli\s+baar\s+jaisa|pichla\s+order|wahi\s+jo\s+kal|same\s+order\s+(?:repeat|bhej(?:o|na)?)|"
+        r"repeat\s+(?:last\s+)?order|last\s+time\s+wala|wahi\s+maal\s+bhej(?:o|na)?|"
+        r"पिछली\s+बार\s+जैसा|वही\s+ऑर्डर)",
         re.IGNORECASE,
     ),
 ]
 
 PAYMENT_NOTE_PATTERNS = [
     re.compile(
-        r"\b(?:upi\s+kar\s+diya|payment\s+(?:kar\s+diya|bhej\s+diya|done)|"
+        r"(?:upi\s+kar\s+diya|payment\s+(?:kar\s+diya|bhej\s+diya|done)|"
         r"utr\s*[:#\-]?\s*\d{6,}|khata\s+me\s+jama|neft\s+kiya|rtgs\s+kiya|gpay\s+kiya|"
-        r"पेमेंट\s+कर\s+दिया|खाते\s+में\s+जमा)\b",
+        r"पेमेंट\s+कर\s+दिया|खाते\s+में\s+जमा)",
         re.IGNORECASE,
     ),
 ]
 
 DELIVERY_ENQUIRY_PATTERNS = [
     re.compile(
-        r"\b(?:kab\s+aayega|maal\s+kab\s+aayega|tempo\s+kahan|dispatch\s+hua\s+kya|"
-        r"delivery\s+status|डिलीवरी\s+कब|माल\s+कब\s+आएगा)\b",
+        r"(?:kab\s+aayega|maal\s+kab\s+aayega|tempo\s+kahan|dispatch\s+hua\s+kya|"
+        r"delivery\s+status|डिलीवरी\s+कब|माल\s+कब\s+आएगा)",
         re.IGNORECASE,
     ),
 ]
 
 COMPLAINT_PATTERNS = [
     re.compile(
-        r"\b(?:maal\s+kharab|damaged\s+nikla|expired\s+maal|shortage\s+hai|tut\s+gaya|"
-        r"शिकायत|माल\s+खराब)\b",
+        r"(?:maal\s+kharab|damaged\s+nikla|expired\s+maal|shortage\s+hai|tut\s+gaya|" r"शिकायत|माल\s+खराब)",
         re.IGNORECASE,
     ),
 ]
@@ -411,7 +410,7 @@ COMPLAINT_PATTERNS = [
 GREETING_ONLY_RE = re.compile(
     r"^\s*(?:namaste|namaskar|ram\s+ram|jai\s+shri\s+krishna|hello|hi|hey|ok|okay|"
     r"thik\s+hai|thank\s+you|shukriya|dhanyawad|नमस्ते|राम\s+राम|जय\s+श्री\s+कृष्ण)"
-    r"(?:\s+bhaiya|\s+ji|\s+sir|\s+bhai)?[\s!.,]*$",
+    r"(?:\s+(?:bhaiya|ji|sir|bhai|dada|anna|seth))*[\s!.,]*$",
     re.IGNORECASE,
 )
 

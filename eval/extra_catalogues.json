@@ -1,0 +1,178 @@
+{
+  "sharma_hardware": [
+    {
+      "code": "HW-PVC1",
+      "name": "Astral CPVC Pipe 1 Inch (3m Length)",
+      "category": "Plumbing",
+      "baseUnit": "Bundle",
+      "packSizeLabel": "1 inch",
+      "basePricePaise": 420000,
+      "wholesalePricePaise": 395000,
+      "taxRateBps": 1800,
+      "aliases": [
+        "astral pipe",
+        "cpvc pipe 1 inch",
+        "1 inch pipe",
+        "pvc pipe",
+        "पाइप"
+      ],
+      "allowedUnits": [
+        {
+          "unit": "Bundle",
+          "multiplierNum": 1,
+          "multiplierDen": 1,
+          "isBase": true
+        },
+        {
+          "unit": "Pcs",
+          "multiplierNum": 1,
+          "multiplierDen": 10,
+          "isBase": false
+        }
+      ]
+    },
+    {
+      "code": "HW-FEV5",
+      "name": "Fevicol SH Synthetic Resin Adhesive (5kg Jar)",
+      "category": "Adhesives",
+      "baseUnit": "Jar",
+      "packSizeLabel": "5kg",
+      "basePricePaise": 145000,
+      "wholesalePricePaise": 132000,
+      "taxRateBps": 1800,
+      "aliases": [
+        "fevicol",
+        "fevicol 5kg",
+        "fevicol sh",
+        "फेविकोल"
+      ],
+      "allowedUnits": [
+        {
+          "unit": "Jar",
+          "multiplierNum": 1,
+          "multiplierDen": 1,
+          "isBase": true
+        },
+        {
+          "unit": "Box",
+          "multiplierNum": 4,
+          "multiplierDen": 1,
+          "isBase": false
+        },
+        {
+          "unit": "Kg",
+          "multiplierNum": 1,
+          "multiplierDen": 5,
+          "isBase": false
+        }
+      ]
+    },
+    {
+      "code": "HW-WIRE",
+      "name": "Havells Life Line Plus 2.5 sqmm House Wire (90m Coil)",
+      "category": "Electrical",
+      "baseUnit": "Roll",
+      "packSizeLabel": "2.5 sqmm",
+      "basePricePaise": 238000,
+      "wholesalePricePaise": 219000,
+      "taxRateBps": 1800,
+      "aliases": [
+        "havells wire",
+        "wire coil",
+        "2.5mm wire",
+        "house wire",
+        "तार"
+      ],
+      "allowedUnits": [
+        {
+          "unit": "Roll",
+          "multiplierNum": 1,
+          "multiplierDen": 1,
+          "isBase": true
+        },
+        {
+          "unit": "Box",
+          "multiplierNum": 1,
+          "multiplierDen": 1,
+          "isBase": false
+        }
+      ]
+    }
+  ],
+  "surat_apparel": [
+    {
+      "code": "AP-RPV1",
+      "name": "Rupa Frontline Men's Cotton Vest / Baniyan (90cm)",
+      "category": "Innerwear & Hosiery",
+      "baseUnit": "Dozen",
+      "packSizeLabel": "90cm",
+      "basePricePaise": 108000,
+      "wholesalePricePaise": 96000,
+      "taxRateBps": 500,
+      "aliases": [
+        "rupa baniyan",
+        "frontline vest",
+        "baniyan",
+        "vest dozen",
+        "बनियान"
+      ],
+      "allowedUnits": [
+        {
+          "unit": "Dozen",
+          "multiplierNum": 1,
+          "multiplierDen": 1,
+          "isBase": true
+        },
+        {
+          "unit": "Box",
+          "multiplierNum": 1,
+          "multiplierDen": 1,
+          "isBase": false
+        },
+        {
+          "unit": "Peti",
+          "multiplierNum": 20,
+          "multiplierDen": 1,
+          "isBase": false
+        },
+        {
+          "unit": "Pcs",
+          "multiplierNum": 1,
+          "multiplierDen": 12,
+          "isBase": false
+        }
+      ]
+    },
+    {
+      "code": "AP-KUR2",
+      "name": "Jaipuri Block Print Cotton Kurti Set (XL)",
+      "category": "Ethnic Wear",
+      "baseUnit": "Bundle",
+      "packSizeLabel": "Set of 4",
+      "basePricePaise": 240000,
+      "wholesalePricePaise": 210000,
+      "taxRateBps": 500,
+      "aliases": [
+        "jaipuri kurti",
+        "cotton kurti",
+        "kurti bundle",
+        "kurti gaddi",
+        "कुर्ती"
+      ],
+      "allowedUnits": [
+        {
+          "unit": "Bundle",
+          "multiplierNum": 1,
+          "multiplierDen": 1,
+          "isBase": true
+        },
+        {
+          "unit": "Pcs",
+          "multiplierNum": 1,
+          "multiplierDen": 4,
+          "isBase": false
+        }
+      ]
+    }
+  ]
+}

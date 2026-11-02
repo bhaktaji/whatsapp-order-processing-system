@@ -74,6 +74,9 @@ jobs:
         working-directory: backend
         run: pytest -v
 
+      - name: Run 620-Message NLP Evaluation Harness & Regression Gate
+        run: PYTHONPATH=backend python scripts/eval.py --check-thresholds
+
       - name: Set up Node.js 22
         uses: actions/setup-node@v4
         with:

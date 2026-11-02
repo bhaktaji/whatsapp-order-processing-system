@@ -1,0 +1,371 @@
+{
+  "dev": {
+    "total_messages": 414,
+    "total_expected_lines": 592,
+    "line_precision": 1.0,
+    "line_recall": 1.0,
+    "line_f1": 1.0,
+    "order_exact_match": 1.0,
+    "intent_accuracy": 1.0,
+    "sku_top1_accuracy": 1.0,
+    "sku_top3_accuracy": 1.0,
+    "qty_exact_accuracy": 1.0,
+    "unit_exact_accuracy": 1.0,
+    "false_auto_confirm_rate": 0.0,
+    "false_auto_confirm_count": 0,
+    "calibration_ece": 0.1297,
+    "latency_p50_ms": 3.869,
+    "latency_p95_ms": 8.422,
+    "latency_mean_ms": 4.823,
+    "llm_call_rate": 0.0,
+    "estimated_cost_inr_per_1k_orders": 0.0,
+    "slice_breakdown": {
+      "lang:bn": {
+        "total": 15,
+        "exact": 15,
+        "accuracy": 1.0
+      },
+      "lang:en": {
+        "total": 11,
+        "exact": 11,
+        "accuracy": 1.0
+      },
+      "lang:hi_devanagari": {
+        "total": 45,
+        "exact": 45,
+        "accuracy": 1.0
+      },
+      "lang:hinglish": {
+        "total": 313,
+        "exact": 313,
+        "accuracy": 1.0
+      },
+      "lang:mr_devanagari": {
+        "total": 15,
+        "exact": 15,
+        "accuracy": 1.0
+      },
+      "lang:ta": {
+        "total": 15,
+        "exact": 15,
+        "accuracy": 1.0
+      },
+      "phenom:ambiguous_range": {
+        "total": 12,
+        "exact": 12,
+        "accuracy": 1.0
+      },
+      "phenom:apparel_vertical": {
+        "total": 10,
+        "exact": 10,
+        "accuracy": 1.0
+      },
+      "phenom:colloquial_fraction": {
+        "total": 60,
+        "exact": 60,
+        "accuracy": 1.0
+      },
+      "phenom:conjunction_hinglish": {
+        "total": 47,
+        "exact": 47,
+        "accuracy": 1.0
+      },
+      "phenom:d2c_vertical": {
+        "total": 11,
+        "exact": 11,
+        "accuracy": 1.0
+      },
+      "phenom:hardware_vertical": {
+        "total": 10,
+        "exact": 10,
+        "accuracy": 1.0
+      },
+      "phenom:incompatible_unit": {
+        "total": 12,
+        "exact": 12,
+        "accuracy": 1.0
+      },
+      "phenom:indic_script_and_numerals": {
+        "total": 60,
+        "exact": 60,
+        "accuracy": 1.0
+      },
+      "phenom:intent_availability_enquiry": {
+        "total": 9,
+        "exact": 9,
+        "accuracy": 1.0
+      },
+      "phenom:intent_complaint": {
+        "total": 8,
+        "exact": 8,
+        "accuracy": 1.0
+      },
+      "phenom:intent_delivery_enquiry": {
+        "total": 8,
+        "exact": 8,
+        "accuracy": 1.0
+      },
+      "phenom:intent_greeting_other": {
+        "total": 8,
+        "exact": 8,
+        "accuracy": 1.0
+      },
+      "phenom:intent_modification_cancel": {
+        "total": 9,
+        "exact": 9,
+        "accuracy": 1.0
+      },
+      "phenom:intent_rate_enquiry": {
+        "total": 9,
+        "exact": 9,
+        "accuracy": 1.0
+      },
+      "phenom:intent_repeat_order": {
+        "total": 16,
+        "exact": 16,
+        "accuracy": 1.0
+      },
+      "phenom:multiline_hinglish": {
+        "total": 47,
+        "exact": 47,
+        "accuracy": 1.0
+      },
+      "phenom:pack_size_separation": {
+        "total": 21,
+        "exact": 21,
+        "accuracy": 1.0
+      },
+      "phenom:prompt_injection": {
+        "total": 12,
+        "exact": 12,
+        "accuracy": 1.0
+      },
+      "phenom:scheme_2_plus_1": {
+        "total": 12,
+        "exact": 12,
+        "accuracy": 1.0
+      },
+      "phenom:spices_vertical": {
+        "total": 21,
+        "exact": 21,
+        "accuracy": 1.0
+      },
+      "phenom:unknown_sku": {
+        "total": 12,
+        "exact": 12,
+        "accuracy": 1.0
+      },
+      "source:synthetic": {
+        "total": 414,
+        "exact": 414,
+        "accuracy": 1.0
+      },
+      "vertical:apparel": {
+        "total": 10,
+        "exact": 10,
+        "accuracy": 1.0
+      },
+      "vertical:d2c_skincare": {
+        "total": 11,
+        "exact": 11,
+        "accuracy": 1.0
+      },
+      "vertical:dairy": {
+        "total": 20,
+        "exact": 20,
+        "accuracy": 1.0
+      },
+      "vertical:fmcg": {
+        "total": 255,
+        "exact": 255,
+        "accuracy": 1.0
+      },
+      "vertical:grains": {
+        "total": 87,
+        "exact": 87,
+        "accuracy": 1.0
+      },
+      "vertical:hardware": {
+        "total": 10,
+        "exact": 10,
+        "accuracy": 1.0
+      },
+      "vertical:spices": {
+        "total": 21,
+        "exact": 21,
+        "accuracy": 1.0
+      }
+    },
+    "failures": []
+  },
+  "test": {
+    "total_messages": 206,
+    "total_expected_lines": 302,
+    "line_precision": 1.0,
+    "line_recall": 1.0,
+    "line_f1": 1.0,
+    "order_exact_match": 1.0,
+    "intent_accuracy": 1.0,
+    "sku_top1_accuracy": 1.0,
+    "sku_top3_accuracy": 1.0,
+    "qty_exact_accuracy": 1.0,
+    "unit_exact_accuracy": 1.0,
+    "false_auto_confirm_rate": 0.0,
+    "false_auto_confirm_count": 0,
+    "calibration_ece": 0.1272,
+    "latency_p50_ms": 3.827,
+    "latency_p95_ms": 7.887,
+    "latency_mean_ms": 4.795,
+    "llm_call_rate": 0.0,
+    "estimated_cost_inr_per_1k_orders": 0.0,
+    "slice_breakdown": {
+      "lang:en": {
+        "total": 5,
+        "exact": 5,
+        "accuracy": 1.0
+      },
+      "lang:gu": {
+        "total": 15,
+        "exact": 15,
+        "accuracy": 1.0
+      },
+      "lang:hi_devanagari": {
+        "total": 26,
+        "exact": 26,
+        "accuracy": 1.0
+      },
+      "lang:hinglish": {
+        "total": 160,
+        "exact": 160,
+        "accuracy": 1.0
+      },
+      "phenom:ambiguous_range": {
+        "total": 6,
+        "exact": 6,
+        "accuracy": 1.0
+      },
+      "phenom:apparel_vertical": {
+        "total": 5,
+        "exact": 5,
+        "accuracy": 1.0
+      },
+      "phenom:colloquial_fraction": {
+        "total": 30,
+        "exact": 30,
+        "accuracy": 1.0
+      },
+      "phenom:d2c_vertical": {
+        "total": 5,
+        "exact": 5,
+        "accuracy": 1.0
+      },
+      "phenom:hardware_vertical": {
+        "total": 5,
+        "exact": 5,
+        "accuracy": 1.0
+      },
+      "phenom:incompatible_unit": {
+        "total": 6,
+        "exact": 6,
+        "accuracy": 1.0
+      },
+      "phenom:indic_script_and_numerals": {
+        "total": 30,
+        "exact": 30,
+        "accuracy": 1.0
+      },
+      "phenom:intent_greeting_other": {
+        "total": 8,
+        "exact": 8,
+        "accuracy": 1.0
+      },
+      "phenom:intent_modification_cancel": {
+        "total": 8,
+        "exact": 8,
+        "accuracy": 1.0
+      },
+      "phenom:intent_payment_note": {
+        "total": 8,
+        "exact": 8,
+        "accuracy": 1.0
+      },
+      "phenom:intent_rate_enquiry": {
+        "total": 9,
+        "exact": 9,
+        "accuracy": 1.0
+      },
+      "phenom:numbered_list_hinglish": {
+        "total": 46,
+        "exact": 46,
+        "accuracy": 1.0
+      },
+      "phenom:pack_size_separation": {
+        "total": 11,
+        "exact": 11,
+        "accuracy": 1.0
+      },
+      "phenom:prompt_injection": {
+        "total": 6,
+        "exact": 6,
+        "accuracy": 1.0
+      },
+      "phenom:scheme_2_plus_1": {
+        "total": 6,
+        "exact": 6,
+        "accuracy": 1.0
+      },
+      "phenom:spices_vertical": {
+        "total": 11,
+        "exact": 11,
+        "accuracy": 1.0
+      },
+      "phenom:unknown_sku": {
+        "total": 6,
+        "exact": 6,
+        "accuracy": 1.0
+      },
+      "source:synthetic": {
+        "total": 206,
+        "exact": 206,
+        "accuracy": 1.0
+      },
+      "vertical:apparel": {
+        "total": 5,
+        "exact": 5,
+        "accuracy": 1.0
+      },
+      "vertical:d2c_skincare": {
+        "total": 5,
+        "exact": 5,
+        "accuracy": 1.0
+      },
+      "vertical:dairy": {
+        "total": 9,
+        "exact": 9,
+        "accuracy": 1.0
+      },
+      "vertical:fmcg": {
+        "total": 126,
+        "exact": 126,
+        "accuracy": 1.0
+      },
+      "vertical:grains": {
+        "total": 45,
+        "exact": 45,
+        "accuracy": 1.0
+      },
+      "vertical:hardware": {
+        "total": 5,
+        "exact": 5,
+        "accuracy": 1.0
+      },
+      "vertical:spices": {
+        "total": 11,
+        "exact": 11,
+        "accuracy": 1.0
+      }
+    },
+    "failures": []
+  },
+  "real_pilot": null
+}
