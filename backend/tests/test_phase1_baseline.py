@@ -16,6 +16,10 @@ import os
 from pathlib import Path
 
 import pytest
+from fastapi.testclient import TestClient
+from sqlalchemy import func, select
+from sqlalchemy.exc import IntegrityError
+
 from app.config import Settings, get_settings
 from app.db import get_session_factory, reset_engine, transactional_session
 from app.main import app
@@ -28,9 +32,6 @@ from app.money import (
     rupees_to_paise,
 )
 from app.seed import run_seed
-from fastapi.testclient import TestClient
-from sqlalchemy import func, select
-from sqlalchemy.exc import IntegrityError
 
 
 @pytest.fixture(autouse=True)
