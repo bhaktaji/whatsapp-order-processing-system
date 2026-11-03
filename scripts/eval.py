@@ -151,8 +151,8 @@ def evaluate_split(
                         "pred_intent": res.intent,
                         "expected_lines": exp_lines,
                         "pred_lines": [
-                            {"sku_code": l.sku_code, "qty": l.qty, "unit": l.unit, "review": l.requires_review}
-                            for l in pred_lines
+                            {"sku_code": ln.sku_code, "qty": ln.qty, "unit": ln.unit, "review": ln.requires_review}
+                            for ln in pred_lines
                         ],
                     }
                 )

@@ -1,0 +1,16 @@
+{
+  "total_requests": 200,
+  "unique_wamids_sent": 160,
+  "replay_wamids_sent": 40,
+  "orders_created": 160,
+  "duplicates_suppressed": 40,
+  "http_errors": 0,
+  "wall_time_seconds": 4.622,
+  "throughput_req_per_sec": 43.27,
+  "latency_ms": {
+    "mean": 22.95,
+    "p50": 22.0,
+    "p95": 30.76,
+    "p99": 38.69
+  }
+}

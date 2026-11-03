@@ -211,3 +211,25 @@ flowchart LR
 ### Why a PostgreSQL Job Table (`SELECT ... FOR UPDATE SKIP LOCKED`) Instead of Redis:
 - Eliminates the unused Redis container locally and avoids paying ~$35+/month for Cloud Memorystore in staging/production.
 - Provides transactional durability: when `POST /webhooks/whatsapp` verifies `X-Hub-Signature-256`, it inserts the `InboundMessage` and a `ProcessingJob` row in a single ACID transaction (handling the 90-second per-sender debounce window natively via `run_after`) and returns `200 OK` in `< 30 ms`.
+
+
+---
+
+## 10. Phase 1–9 Verified Remediation Matrix (Updated 2026-11-02 on `release/prod-ready`)
+
+All 12 risk register items (`R-01` through `R-12`) and all 15 concrete extraction failures (`F-01` through `F-15`) identified in this Phase 0 audit have been remediated and verified by automated tests:
+
+| Risk ID | Remediation Implemented | Verification Test / Script | Status |
+|---|---|---|---|
+| `R-01` (`CUSTOM-*` fabrication & prompt injection) | Removed `CUSTOM-*` fabrication; Stage 1/3 prompt-injection guard (`PROMPT_INJECTION_SUSPECTED`) and Stage 7 `UNKNOWN` SKU handling. | `test_f12_unknown_item_never_fabricates_custom_sku`, `test_f14_prompt_injection_neutralised_and_flagged` | **RESOLVED & VERIFIED** |
+| `R-02` (Rate enquiries & cancellations booked as orders) | Stage 3 `classify_intent` routes `RATE_ENQUIRY`, `MODIFICATION_CANCEL`, `REPEAT_ORDER`, `PAYMENT_NOTE`, and `OPT_OUT` to `INBOX_REVIEW` with `0` order lines. | `test_f06_rate_enquiry_never_creates_order_lines`, `test_f07_cancellation_and_modification_routed_to_review` | **RESOLVED & VERIFIED** |
+| `R-03` (Multiline `\n` loss, `paune`/`sadhe`, `2+1`, ranges) | Stage 1 preserves `\n`; Stage 5 stashes `2+1` schemes; Stage 6 parses compositional `Fraction` values and flags `5-6` ranges (`AMBIGUOUS_QUANTITY`). | `test_f01`, `test_f03`, `test_f10`, `test_f11`, `scripts/eval.py --check-thresholds` (`100%` F1) | **RESOLVED & VERIFIED** |
+| `R-04` (Per-SKU unit conversions & integer paise math) | Added `SkuUnit` table (`multiplier_num`/`multiplier_den`) and `backend/app/money.py` (`BigInteger` paise + `Integer` basis points, zero `float`). | `test_integer_paise_financial_calculations_and_float_ban`, `test_per_sku_per_tenant_unit_conversions`, `test_f13` | **RESOLVED & VERIFIED** |
+| `R-05` (JWT Auth, RBAC & Tenant Isolation) | Added `backend/app/auth.py` with HMAC-SHA256 JWT tokens (`OWNER \| STAFF \| VIEWER`) where `tenant_id` comes strictly from the JWT session. | `test_rbac_role_hierarchy_owner_staff_viewer`, `test_cross_tenant_idor_isolation_blocked` | **RESOLVED & VERIFIED** |
+| `R-06` (`POST /webhooks/whatsapp`, HMAC, `wamid` idempotency, 24h window) | Added `verify_meta_hmac_signature`, `(tenant_id, wamid)` uniqueness, `check_24h_service_window`, and `STOP` opt-out handling. | `test_whatsapp_webhook_hmac_signature_and_wamid_idempotency`, `scripts/load_test.py` (`200` reqs) | **RESOLVED & VERIFIED** |
+| `R-07` (`backend/Dockerfile`, `.env.example`, Alembic migrations) | Created multi-stage `backend/Dockerfile`, `.env.example`, `0001_initial_schema.py`, and idempotent `backend/app/seed.py`. | `test_phase1_baseline.py`, GitHub Actions CI | **RESOLVED & VERIFIED** |
+| `R-08` (Double-entry balanced Tally Prime XML) | Upgraded `AccountingSyncAdapter.to_tally_prime_xml` with balanced `ALLLEDGERENTRIES.LIST` (`Party Debit + Sales Credit + Tax Credits == 0.00`). | `test_order_lifecycle_learning_loop_and_verified_only_erp_export` | **RESOLVED & VERIFIED** |
+| `R-09` (Live backend-connected Frontend Workbench) | Built live React + TypeScript Operator Workbench (`src/App.tsx`) + Express/FastAPI proxy (`server.ts`); moved static demo to `frontend/demo.html`. | `npm run lint`, `npm run build` | **RESOLVED & VERIFIED** |
+| `R-10` (DPDP PII masking & Right-to-Erasure) | Added `mask_pii_text` (`+91******1209`) and `DELETE /api/customers/{customer_id}/pii` (`OWNER` role). | `test_dpdp_right_to_erasure_redacts_pii_while_preserving_gst_totals`, `test_candidate_locked_llm_schema_and_pii_masking` | **RESOLVED & VERIFIED** |
+| `R-11` (RFC-4180 CSV & formula-injection protection) | Added `sanitize_csv_cell` in `backend/app/accounting_sync.py`. | `test_csv_formula_injection_protection_and_rfc4180` | **RESOLVED & VERIFIED** |
+| `R-12` (Remove `push_to_github.bat/.sh` & unify seed catalog) | Deleted `push_to_github.bat/.sh` and `backend/prisma/schema.prisma`; unified `config/tenants.json` with PostgreSQL seed. | `git status`, `test_idempotent_demo_tenant_seed` | **RESOLVED & VERIFIED** |

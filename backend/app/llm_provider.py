@@ -20,7 +20,7 @@ from typing import Any, Protocol
 
 import httpx
 
-PHONE_PII_RE = re.compile(r"(?:\+?91[\s\-]?)?[6-9]\d{9}")
+PHONE_PII_RE = re.compile(r"(?:\+?91[\s\-]?)?[6-9]\d{4}[\s\-]?\d{5}\b")
 
 
 def mask_pii_text(text: str) -> str:

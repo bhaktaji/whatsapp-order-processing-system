@@ -19,7 +19,7 @@
 | **Unit Match Accuracy** | 100.00% | 100.00% | >= 96.0% |
 | **False Auto-Confirm Rate** | **0.00%** (0) | **0.00%** (0) | **< 1.00%** |
 | **Calibration Error (ECE)** | 0.1297 | 0.1272 | <= 0.1000 |
-| **Latency p50 / p95 (Deterministic)** | 3.87 ms / 8.42 ms | 3.83 ms / 7.89 ms | < 50 ms |
+| **Latency p50 / p95 (Deterministic)** | 4.38 ms / 7.83 ms | 4.03 ms / 8.39 ms | < 50 ms |
 | **LLM Fallback Rate / Cost per 1k Orders** | 0.0% (₹0.00) | 0.0% (₹0.00) | <= ₹150 / 1k |
 
 ## 2. Real Pilot Distributor Dataset Status
