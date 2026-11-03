@@ -1,123 +1,494 @@
 {
   "patel_fmcg": {
     "id": "patel_fmcg",
+    "slug": "patel_fmcg",
     "brandName": "Patel Agro & FMCG Distributors",
     "industry": "FMCG & Kirana Wholesale (India)",
     "primaryColor": "#059669",
     "currencySymbol": "₹",
     "currencyCode": "INR",
     "taxRegime": "GST_INDIA",
+    "stateCode": "27",
+    "gstin": "27AABCP9910K1Z4",
     "defaultErp": "TALLY_PRIME",
-    "autoApproveThreshold": 0.90,
-    "fuzzyMatchThreshold": 0.70,
+    "autoConfirmEnabled": false,
+    "autoApproveThreshold": 0.92,
+    "fuzzyMatchThreshold": 0.72,
     "skus": [
       {
         "code": "SKU-PG05",
         "name": "Parle-G Gold Glucose Family Pack (24x250g)",
+        "category": "Biscuits & Confectionery",
         "baseUnit": "Peti",
+        "packSizeLabel": "10 wala / 250g",
         "basePrice": 620,
         "wholesalePrice": 560,
+        "distributorPrice": 535,
+        "basePricePaise": 62000,
+        "wholesalePricePaise": 56000,
+        "distributorPricePaise": 53500,
         "taxRate": 18,
+        "taxRateBps": 1800,
         "hsnCode": "19053100",
-        "aliases": ["parle g", "parle-g", "parle peti", "pg gold", "parle biscuit"]
+        "moq": 1,
+        "maxOrderQty": 250,
+        "aliases": [
+          "parle g",
+          "parle-g",
+          "parleg",
+          "parle peti",
+          "pg gold",
+          "parle biscuit",
+          "पारले जी",
+          "पारले-जी",
+          "पारले",
+          "পারলে জি",
+          "પારલે જી",
+          "பார்லே ஜி",
+          "పార్లే జి"
+        ],
+        "allowedUnits": [
+          { "unit": "Peti", "multiplierNum": 1, "multiplierDen": 1, "isBase": true },
+          { "unit": "Carton", "multiplierNum": 1, "multiplierDen": 1, "isBase": false },
+          { "unit": "Box", "multiplierNum": 1, "multiplierDen": 1, "isBase": false },
+          { "unit": "Dozen", "multiplierNum": 1, "multiplierDen": 2, "isBase": false },
+          { "unit": "Pkt", "multiplierNum": 1, "multiplierDen": 24, "isBase": false }
+        ]
       },
       {
         "code": "SKU-BM25",
         "name": "Daawat Super Basmati Rice 25kg Sack",
+        "category": "Grains & Staples",
         "baseUnit": "Katta",
+        "packSizeLabel": "25kg",
         "basePrice": 2450,
         "wholesalePrice": 2280,
+        "distributorPrice": 2190,
+        "basePricePaise": 245000,
+        "wholesalePricePaise": 228000,
+        "distributorPricePaise": 219000,
         "taxRate": 5,
+        "taxRateBps": 500,
         "hsnCode": "10063020",
-        "aliases": ["basmati", "basmati 25kg", "chawal katta", "daawat katta", "rice bag"]
+        "moq": 1,
+        "maxOrderQty": 200,
+        "aliases": [
+          "basmati",
+          "basmati 25kg",
+          "basmati chawal",
+          "chawal katta",
+          "daawat katta",
+          "daawat basmati",
+          "rice bag",
+          "बासमती",
+          "बासमती चावल",
+          "चावल",
+          "বাসমতি चाल",
+          "બાસમતી ચોખા"
+        ],
+        "allowedUnits": [
+          { "unit": "Katta", "multiplierNum": 1, "multiplierDen": 1, "isBase": true },
+          { "unit": "Bori", "multiplierNum": 1, "multiplierDen": 1, "isBase": false },
+          { "unit": "Quintal", "multiplierNum": 4, "multiplierDen": 1, "isBase": false },
+          { "unit": "Kg", "multiplierNum": 1, "multiplierDen": 25, "isBase": false }
+        ]
       },
       {
         "code": "SKU-AT12",
         "name": "Amul Taaza UHT Milk Tetrapack (12x1L)",
+        "category": "Dairy & Beverages",
         "baseUnit": "Box",
+        "packSizeLabel": "1L",
         "basePrice": 840,
         "wholesalePrice": 790,
+        "distributorPrice": 765,
+        "basePricePaise": 84000,
+        "wholesalePricePaise": 79000,
+        "distributorPricePaise": 76500,
         "taxRate": 5,
+        "taxRateBps": 500,
         "hsnCode": "04012000",
-        "aliases": ["amul taaza", "amul milk box", "taaza 1l", "doodh box"]
+        "moq": 1,
+        "maxOrderQty": 150,
+        "aliases": [
+          "amul taaza",
+          "amul milk box",
+          "taaza 1l",
+          "doodh box",
+          "amul doodh",
+          "अमूल ताज़ा",
+          "अमूल दूध",
+          "दूध"
+        ],
+        "allowedUnits": [
+          { "unit": "Box", "multiplierNum": 1, "multiplierDen": 1, "isBase": true },
+          { "unit": "Crate", "multiplierNum": 1, "multiplierDen": 1, "isBase": false },
+          { "unit": "Peti", "multiplierNum": 1, "multiplierDen": 1, "isBase": false },
+          { "unit": "Ltr", "multiplierNum": 1, "multiplierDen": 12, "isBase": false },
+          { "unit": "Pkt", "multiplierNum": 1, "multiplierDen": 12, "isBase": false }
+        ]
       },
       {
         "code": "SKU-FO15",
         "name": "Fortune Sunlite Refined Sunflower Oil 15L Tin",
+        "category": "Edible Oils",
         "baseUnit": "Tin",
+        "packSizeLabel": "15L",
         "basePrice": 2150,
         "wholesalePrice": 1990,
+        "distributorPrice": 1930,
+        "basePricePaise": 215000,
+        "wholesalePricePaise": 199000,
+        "distributorPricePaise": 193000,
         "taxRate": 5,
+        "taxRateBps": 500,
         "hsnCode": "15121910",
-        "aliases": ["fortune oil", "sunflower tin", "tel tin", "fortune 15l"]
+        "moq": 1,
+        "maxOrderQty": 100,
+        "aliases": [
+          "fortune oil",
+          "fortune tel",
+          "sunflower tin",
+          "tel tin",
+          "fortune 15l",
+          "फॉर्च्यून तेल",
+          "तेल टिन",
+          "फॉर्च्यून"
+        ],
+        "allowedUnits": [
+          { "unit": "Tin", "multiplierNum": 1, "multiplierDen": 1, "isBase": true },
+          { "unit": "Dabba", "multiplierNum": 1, "multiplierDen": 1, "isBase": false },
+          { "unit": "Ltr", "multiplierNum": 1, "multiplierDen": 15, "isBase": false }
+        ]
+      },
+      {
+        "code": "SKU-AT10",
+        "name": "Aashirvaad Shudh Chakki Atta (10kg Bag)",
+        "category": "Grains & Staples",
+        "baseUnit": "Bori",
+        "packSizeLabel": "10kg",
+        "basePrice": 475,
+        "wholesalePrice": 440,
+        "distributorPrice": 420,
+        "basePricePaise": 47500,
+        "wholesalePricePaise": 44000,
+        "distributorPricePaise": 42000,
+        "taxRate": 5,
+        "taxRateBps": 500,
+        "hsnCode": "11010000",
+        "moq": 1,
+        "maxOrderQty": 200,
+        "aliases": [
+          "aashirvaad",
+          "ashirvad",
+          "aashirvaad atta",
+          "chakki atta",
+          "gehu atta",
+          "आशीर्वाद आटा",
+          "आशीर्वाद",
+          "आटा"
+        ],
+        "allowedUnits": [
+          { "unit": "Bori", "multiplierNum": 1, "multiplierDen": 1, "isBase": true },
+          { "unit": "Katta", "multiplierNum": 1, "multiplierDen": 1, "isBase": false },
+          { "unit": "Bag", "multiplierNum": 1, "multiplierDen": 1, "isBase": false },
+          { "unit": "Pkt", "multiplierNum": 1, "multiplierDen": 1, "isBase": false },
+          { "unit": "Kg", "multiplierNum": 1, "multiplierDen": 10, "isBase": false }
+        ]
+      },
+      {
+        "code": "SKU-SF10",
+        "name": "Surf Excel Quick Wash Sachet Strip (10 Rs Wala)",
+        "category": "Home Care",
+        "baseUnit": "Ladi",
+        "packSizeLabel": "10 wala",
+        "basePrice": 120,
+        "wholesalePrice": 110,
+        "distributorPrice": 104,
+        "basePricePaise": 12000,
+        "wholesalePricePaise": 11000,
+        "distributorPricePaise": 10400,
+        "taxRate": 18,
+        "taxRateBps": 1800,
+        "hsnCode": "34022010",
+        "moq": 1,
+        "maxOrderQty": 500,
+        "aliases": [
+          "surf excel",
+          "surf",
+          "surf ladi",
+          "washing powder",
+          "सर्फ एक्सेल",
+          "सर्फ"
+        ],
+        "allowedUnits": [
+          { "unit": "Ladi", "multiplierNum": 1, "multiplierDen": 1, "isBase": true },
+          { "unit": "Pkt", "multiplierNum": 1, "multiplierDen": 12, "isBase": false },
+          { "unit": "Peti", "multiplierNum": 10, "multiplierDen": 1, "isBase": false }
+        ]
+      },
+      {
+        "code": "SKU-MG24",
+        "name": "Maggi 2-Minute Masala Noodles Case (96x70g)",
+        "category": "Instant Foods",
+        "baseUnit": "Peti",
+        "packSizeLabel": "14 wala / 70g",
+        "basePrice": 1020,
+        "wholesalePrice": 940,
+        "distributorPrice": 910,
+        "basePricePaise": 102000,
+        "wholesalePricePaise": 94000,
+        "distributorPricePaise": 91000,
+        "taxRate": 18,
+        "taxRateBps": 1800,
+        "hsnCode": "19023010",
+        "moq": 1,
+        "maxOrderQty": 200,
+        "aliases": [
+          "maggi",
+          "maggie",
+          "maggi masala",
+          "maggi peti",
+          "मैगी",
+          "मैगी मसाला"
+        ],
+        "allowedUnits": [
+          { "unit": "Peti", "multiplierNum": 1, "multiplierDen": 1, "isBase": true },
+          { "unit": "Carton", "multiplierNum": 1, "multiplierDen": 1, "isBase": false },
+          { "unit": "Dozen", "multiplierNum": 1, "multiplierDen": 8, "isBase": false },
+          { "unit": "Pkt", "multiplierNum": 1, "multiplierDen": 96, "isBase": false }
+        ]
+      },
+      {
+        "code": "SKU-CH50",
+        "name": "M-30 Refined White Sugar 50kg Katta",
+        "category": "Grains & Staples",
+        "baseUnit": "Katta",
+        "packSizeLabel": "50kg",
+        "basePrice": 2050,
+        "wholesalePrice": 1950,
+        "distributorPrice": 1900,
+        "basePricePaise": 205000,
+        "wholesalePricePaise": 195000,
+        "distributorPricePaise": 190000,
+        "taxRate": 5,
+        "taxRateBps": 500,
+        "hsnCode": "17019990",
+        "moq": 1,
+        "maxOrderQty": 200,
+        "aliases": [
+          "chini",
+          "shakkar",
+          "sugar",
+          "sugar katta",
+          "चीनी",
+          "शक्कर",
+          "साखर",
+          "চিনি",
+          "ખાંડ"
+        ],
+        "allowedUnits": [
+          { "unit": "Katta", "multiplierNum": 1, "multiplierDen": 1, "isBase": true },
+          { "unit": "Bori", "multiplierNum": 1, "multiplierDen": 1, "isBase": false },
+          { "unit": "Quintal", "multiplierNum": 2, "multiplierDen": 1, "isBase": false },
+          { "unit": "Kg", "multiplierNum": 1, "multiplierDen": 50, "isBase": false }
+        ]
+      }
+    ],
+    "customers": [
+      {
+        "name": "Laxmi Kirana & General Store",
+        "phone": "+919820411209",
+        "stateCode": "27",
+        "priceTier": "WHOLESALE",
+        "gstin": "27AABCL1234F1Z5"
+      },
+      {
+        "name": "Shree Ganesh Supermart",
+        "phone": "+919811277890",
+        "stateCode": "27",
+        "priceTier": "DISTRIBUTOR",
+        "gstin": "27AAECS8821K1Z2"
+      },
+      {
+        "name": "Gupta Provision & Sons (Inter-State)",
+        "phone": "+919765033412",
+        "stateCode": "19",
+        "priceTier": "WHOLESALE",
+        "gstin": "19AADCG5519M1Z9"
       }
     ]
   },
   "glow_insta": {
     "id": "glow_insta",
+    "slug": "glow_insta",
     "brandName": "Kaira Botanicals & Home Studio",
     "industry": "Instagram & WhatsApp D2C Brand",
     "primaryColor": "#7C3AED",
     "currencySymbol": "₹",
     "currencyCode": "INR",
     "taxRegime": "GST_INDIA",
+    "stateCode": "27",
+    "gstin": "27AADCK4410M1Z1",
     "defaultErp": "ZOHO_BOOKS",
-    "autoApproveThreshold": 0.88,
-    "fuzzyMatchThreshold": 0.68,
+    "autoConfirmEnabled": false,
+    "autoApproveThreshold": 0.90,
+    "fuzzyMatchThreshold": 0.70,
     "skus": [
       {
         "code": "KAI-LAV01",
         "name": "French Lavender & Oat Milk Soy Candle (220g)",
+        "category": "Home Fragrance",
         "baseUnit": "Pcs",
+        "packSizeLabel": "220g",
         "basePrice": 899,
         "wholesalePrice": 699,
+        "distributorPrice": 640,
+        "basePricePaise": 89900,
+        "wholesalePricePaise": 69900,
+        "distributorPricePaise": 64000,
         "taxRate": 12,
+        "taxRateBps": 1200,
         "hsnCode": "34060010",
-        "aliases": ["lavender candle", "lavender soy", "purple candle", "sleep candle"]
+        "moq": 1,
+        "maxOrderQty": 100,
+        "aliases": ["lavender candle", "lavender soy", "purple candle", "sleep candle"],
+        "allowedUnits": [
+          { "unit": "Pcs", "multiplierNum": 1, "multiplierDen": 1, "isBase": true },
+          { "unit": "Box", "multiplierNum": 6, "multiplierDen": 1, "isBase": false }
+        ]
       },
       {
         "code": "KAI-ROS02",
         "name": "Kannauj Damask Rose Hydrosol Face Mist (100ml)",
+        "category": "Skincare",
         "baseUnit": "Pcs",
+        "packSizeLabel": "100ml",
         "basePrice": 650,
         "wholesalePrice": 490,
+        "distributorPrice": 450,
+        "basePricePaise": 65000,
+        "wholesalePricePaise": 49000,
+        "distributorPricePaise": 45000,
         "taxRate": 18,
+        "taxRateBps": 1800,
         "hsnCode": "33049990",
-        "aliases": ["rose mist", "rose water", "face mist", "gulab toner"]
+        "moq": 1,
+        "maxOrderQty": 100,
+        "aliases": ["rose mist", "rose water", "face mist", "gulab toner", "gulab jal"],
+        "allowedUnits": [
+          { "unit": "Pcs", "multiplierNum": 1, "multiplierDen": 1, "isBase": true },
+          { "unit": "Bottle", "multiplierNum": 1, "multiplierDen": 1, "isBase": false },
+          { "unit": "Box", "multiplierNum": 12, "multiplierDen": 1, "isBase": false }
+        ]
+      }
+    ],
+    "customers": [
+      {
+        "name": "Ananya Deshmukh",
+        "phone": "+919820766123",
+        "stateCode": "27",
+        "priceTier": "RETAIL",
+        "gstin": null
       }
     ]
   },
   "metro_fresh": {
     "id": "metro_fresh",
-    "brandName": "Metro Fresh Horeca & Artisan Foods",
-    "industry": "B2B Food Brand & Restaurant Commissary",
+    "slug": "metro_fresh",
+    "brandName": "Metro Fresh Mandi & Spice Suppliers",
+    "industry": "Spices, Dry Fruits & Horeca Commissary",
     "primaryColor": "#0284C7",
-    "currencySymbol": "$",
-    "currencyCode": "USD",
-    "taxRegime": "SALES_TAX",
-    "defaultErp": "XERO",
+    "currencySymbol": "₹",
+    "currencyCode": "INR",
+    "taxRegime": "GST_INDIA",
+    "stateCode": "27",
+    "gstin": "27AABCM7721F1Z9",
+    "defaultErp": "EXCEL_CSV",
+    "autoConfirmEnabled": false,
     "autoApproveThreshold": 0.92,
     "fuzzyMatchThreshold": 0.72,
     "skus": [
       {
-        "code": "MF-MOZ05",
-        "name": "Fior di Latte Artisan Mozzarella Block (5kg)",
-        "baseUnit": "Block",
-        "basePrice": 64.00,
-        "wholesalePrice": 54.00,
-        "taxRate": 8.0,
-        "hsnCode": "040610",
-        "aliases": ["mozzarella", "mozz block", "fior di latte", "pizza cheese"]
+        "code": "MF-JR01",
+        "name": "Unjha Special Whole Jeera / Cumin",
+        "category": "Spices",
+        "baseUnit": "Kg",
+        "packSizeLabel": "1kg",
+        "basePrice": 580,
+        "wholesalePrice": 540,
+        "distributorPrice": 515,
+        "basePricePaise": 58000,
+        "wholesalePricePaise": 54000,
+        "distributorPricePaise": 51500,
+        "taxRate": 5,
+        "taxRateBps": 500,
+        "hsnCode": "09093129",
+        "moq": 1,
+        "maxOrderQty": 500,
+        "aliases": ["jeera", "jira", "cumin", "जीरा", "જીરું", "जीरे"],
+        "allowedUnits": [
+          { "unit": "Kg", "multiplierNum": 1, "multiplierDen": 1, "isBase": true },
+          { "unit": "Gm", "multiplierNum": 1, "multiplierDen": 1000, "isBase": false },
+          { "unit": "Katta", "multiplierNum": 30, "multiplierDen": 1, "isBase": false }
+        ]
       },
       {
-        "code": "MF-TOM10",
-        "name": "San Marzano Style Vine Roma Tomatoes (10kg Crate)",
-        "baseUnit": "Crate",
-        "basePrice": 38.00,
-        "wholesalePrice": 32.00,
-        "taxRate": 0.0,
-        "hsnCode": "070200",
-        "aliases": ["roma tomatoes", "tomato crate", "san marzano", "vine tomatoes"]
+        "code": "MF-EL01",
+        "name": "Idukki Green Cardamom / Hari Elaichi (8mm)",
+        "category": "Spices",
+        "baseUnit": "Kg",
+        "packSizeLabel": "1kg",
+        "basePrice": 2600,
+        "wholesalePrice": 2400,
+        "distributorPrice": 2300,
+        "basePricePaise": 260000,
+        "wholesalePricePaise": 240000,
+        "distributorPricePaise": 230000,
+        "taxRate": 5,
+        "taxRateBps": 500,
+        "hsnCode": "09083120",
+        "moq": 1,
+        "maxOrderQty": 100,
+        "aliases": ["elaichi", "ilaychi", "cardamom", "hari elaichi", "इलायची", "ಏಲಕ್ಕಿ", "ஏலக்காய்"],
+        "allowedUnits": [
+          { "unit": "Kg", "multiplierNum": 1, "multiplierDen": 1, "isBase": true },
+          { "unit": "Gm", "multiplierNum": 1, "multiplierDen": 1000, "isBase": false },
+          { "unit": "Pkt", "multiplierNum": 1, "multiplierDen": 4, "isBase": false }
+        ]
+      },
+      {
+        "code": "MF-KJ01",
+        "name": "Goa W320 Whole Kaju / Cashew",
+        "category": "Dry Fruits",
+        "baseUnit": "Kg",
+        "packSizeLabel": "1kg",
+        "basePrice": 880,
+        "wholesalePrice": 820,
+        "distributorPrice": 790,
+        "basePricePaise": 88000,
+        "wholesalePricePaise": 82000,
+        "distributorPricePaise": 79000,
+        "taxRate": 5,
+        "taxRateBps": 500,
+        "hsnCode": "08013220",
+        "moq": 1,
+        "maxOrderQty": 200,
+        "aliases": ["kaju", "cashew", "w320 kaju", "काजू", "কাজু", "કાજુ"],
+        "allowedUnits": [
+          { "unit": "Kg", "multiplierNum": 1, "multiplierDen": 1, "isBase": true },
+          { "unit": "Tin", "multiplierNum": 10, "multiplierDen": 1, "isBase": false },
+          { "unit": "Gm", "multiplierNum": 1, "multiplierDen": 1000, "isBase": false }
+        ]
+      }
+    ],
+    "customers": [
+      {
+        "name": "Royal Darbar Restaurant",
+        "phone": "+919831055440",
+        "stateCode": "19",
+        "priceTier": "WHOLESALE",
+        "gstin": "19AABCR3312F1Z8"
       }
     ]
   }

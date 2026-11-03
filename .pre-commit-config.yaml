@@ -1,0 +1,24 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: check-yaml
+      - id: check-json
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+      - id: detect-private-key
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.7.0
+    hooks:
+      - id: ruff
+        args: [--fix]
+      - id: ruff-format
+
+  - repo: local
+    hooks:
+      - id: forbid-committed-secrets
+        name: Block hardcoded GitHub PATs or fallback tokens
+        entry: bash -c '! git grep -E "(github_pat_|ghp_|orderbridge_webhook_verify_2026|secretpassword)" -- ":!AUDIT.md" ":!.pre-commit-config.yaml" ":!backend/tests/*"'
+        language: system
+        pass_filenames: false
